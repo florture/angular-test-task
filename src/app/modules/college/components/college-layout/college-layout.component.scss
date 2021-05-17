@@ -1,0 +1,19 @@
+.college {
+  .college__info {
+    .header {
+      .header-info {
+        &__logo {
+          img {
+            width: 100%;
+          }
+        }
+        &__logo,
+        &__name {
+          margin-bottom: 20px;
+        }
+      }
+    }
+
+    margin-bottom: 20px;
+  }
+}

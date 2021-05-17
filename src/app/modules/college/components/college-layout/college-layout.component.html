@@ -1,0 +1,43 @@
+<main class="college" *ngIf="(college$ | async) as college; else loading">
+    <section class="college__info">
+        <div class="container header">
+            <div class="header-info mt-5 mt-lg-0">
+                <div class="header-info__logo ml-4 pl-3" *ngIf="college.photo">
+                    <img src="{{ college.photo }}" alt="college photo"/>
+                </div>
+                <h1 class="header-info__name">{{ college?.name }}</h1>
+            </div>
+            <div class="row">
+                <nav class="d-sm-flex">
+                    <ul class="no-wrap">
+                        <li>
+                            <a [routerLink]="['about']" class="active">{{ 'ABOUT' | translate }}</a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['courses']">{{ 'COURSES' | translate }}</a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['teachers']">{{ 'TEACHERS' | translate }}</a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['contacts']">{{ 'CONTACTS' | translate }}</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </section>
+    <section class="college__data pt-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-12">
+                    <router-outlet></router-outlet>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<ng-template #loading>
+    Loading college...
+</ng-template>

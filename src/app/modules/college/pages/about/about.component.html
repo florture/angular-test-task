@@ -1,0 +1,5 @@
+<div *ngIf="(college$ | async) as college; else loading" [innerHTML]="college?.about" class="college-description"></div>
+
+<ng-template #loading>
+    Loading college...
+</ng-template>
